@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import NumberGuessingGame from "./NumberGuessingGame";
+import NumberGuessingGameFuncComponent from "./NumberGuessingGameFuncComponent";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <NumberGuessingGame />
+        <NumberGuessingGameFuncComponent />
       </div>
     );
   }
