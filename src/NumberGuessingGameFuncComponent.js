@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GuessControl from "./GuessControl";
+import GuessControlFuncComponent from "./GuessControlFuncComponent";
 import GuessMessage from "./GuessMessage";
 import GameOver from "./GameOver";
 
@@ -36,7 +36,7 @@ function NumberGuessingGameFuncComponent() {
       <h2>
         Can you guess the number I am thinking of in {MAX_ATTEMPTS} tries?
       </h2>
-      <GuessControl onGuess={handleGuess} />
+      <GuessControlFuncComponent onGuess={handleGuess} />
       {isGameOver && (
         <GameOver hasWon={isCorrectGuess} onReset={handleReset} />
       )}
