@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import GuessControl from "./GuessControl";
+import GuessMessage from "./GuessMessage";
+import GameOver from "./GameOver";
 
 function getRandomNumber() {
   return Math.floor(Math.random() * 100) + 1;
