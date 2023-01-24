@@ -16,6 +16,12 @@ function NumberGuessingGameFuncComponent() {
     setNumberOfGuesses(numberOfGuesses + 1);
   }
 
+  handleReset() {
+    setNumberToGuess(getRandomNumber());
+    setNumberOfGuesses(0);
+    setLatestGuess(null);
+  }
+
   const isCorrectGuess = latestGuess === numberToGuess;
 
   const isGameOver =
