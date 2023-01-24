@@ -4,10 +4,17 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 100) + 1;
 }
 
+const MAX_ATTEMPTS = 5;
+
 function NumberGuessingGameFuncComponent() {
   const [numberToGuess, setNumberToGuess] = useState(getRandomNumber());
   const [numberOfGuesses, setNumberOfGuesses] = useState(0);
   const [latestGuess, setLatestGuess] = useState(null);
+
+  handleGuess(guess) {
+    setLatestGuess(parseInt(guess));
+    setNumberOfGuesses(numberOfGuesses + 1);
+  }
 
   const isCorrectGuess = latestGuess === numberToGuess;
 
