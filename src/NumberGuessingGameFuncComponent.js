@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react';
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * 100) + 1;
+}
 
 function NumberGuessingGameFuncComponent() {
+  const [numberToGuess, setNumberToGuess] = useState(getRandomNumber());
+  const [numberOfGuesses, setNumberOfGuesses] = useState(0);
+  const [latestGuess, setLatestGuess] = useState(null);
+
   const isCorrectGuess = latestGuess === numberToGuess;
 
   const isGameOver =
     isCorrectGuess || numberOfGuesses === MAX_ATTEMPTS;
+
   return (
     <div>
       <h2>I'm thinking of a number from 1 to 100.</h2>
