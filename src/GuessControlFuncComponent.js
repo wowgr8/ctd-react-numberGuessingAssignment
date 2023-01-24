@@ -1,19 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Button from './Button';
 
-function GuessControlFuncComponent() {
-  const [currentGuess, setCurrentGuess] = useState("")
+function GuessControlFuncComponent({ onGuess }) {
+  const [currentGuess, setCurrentGuess] = useState("");
 
-  handleInputChange(event) {
+  const handleInputChange = (event) => {
     setCurrentGuess(event.target.value);
-  }
+  };
 
-  onSubmitGuess() {
-    // Since the values from an HTML input are strings by default,
-    //  convert to a number for the returned guess value
-    //  by passing in the string to the Number function.
-    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-    this.props.onGuess(Number(this.state.currentGuess));
-    this.setState({ currentGuess: "" });
+  const onSubmitGuess = () => {
+    onGuess(Number(currentGuess));
+    setCurrentGuess("");
   }
 
   return (
