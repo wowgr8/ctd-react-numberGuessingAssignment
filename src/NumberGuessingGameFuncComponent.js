@@ -14,12 +14,12 @@ function NumberGuessingGameFuncComponent() {
   const [numberOfGuesses, setNumberOfGuesses] = useState(0);
   const [latestGuess, setLatestGuess] = useState(null);
 
-  handleGuess(guess) {
+  const handleGuess = (guess) => {
     setLatestGuess(parseInt(guess));
     setNumberOfGuesses(numberOfGuesses + 1);
   }
 
-  handleReset() {
+  const handleReset = () => {
     setNumberToGuess(getRandomNumber());
     setNumberOfGuesses(0);
     setLatestGuess(null);
